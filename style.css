@@ -1,0 +1,62 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.navbar{
+    width: 100%;
+    height: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+
+.navbar .container{
+    width: 80%;
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.navbar .container .menu a{
+    text-decoration: none;
+    margin: 0 5px;
+}
+
+.navbar .container .icon{
+    width: 30px;
+    height: 30px;
+    background: url(./img/ham.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    display: none;
+    cursor: pointer;
+}
+.navbar .container .icon.active{
+    background-image: url(./img/close.jpg);
+}
+
+@media only screen and (max-width: 550px){
+    .navbar .container .icon{
+        display: block;
+    }
+    .navbar .container .menu{
+        position: absolute;
+        top: 60px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        background-color: red;
+        height: 100vh;
+        width: 100px;
+        left: -100px;
+        transition: all 0.2s ease-in-out;
+    }
+    .navbar .container .menu.active{
+    left: 300px;
+    }
+}
